@@ -41,14 +41,8 @@ public class signupfragment extends Fragment {
         viewmodel=new ViewModelProvider(this, (ViewModelProvider.Factory) ViewModelProvider.AndroidViewModelFactory
                 .getInstance(getActivity().getApplication())).get(authviewmodel.class);
 
-        viewmodel.getUserdata().observe(this, new Observer<FirebaseUser>() {
-            @Override
-            public void onChanged(FirebaseUser firebaseUser) {
-                navController.navigate(R.id.action_signupfragment_to_signinfragment);
-            }
-        });
-    }
 
+    }
 
 
     @Override
@@ -81,8 +75,10 @@ public class signupfragment extends Fragment {
             public void onClick(View v) {
                 String email=emailedit.getText().toString();
                 String pass=passedit.getText().toString();
+
                 if(!email.isEmpty()&&!pass.isEmpty()){
                     viewmodel.register(email,pass);
+                    navController.navigate(R.id.action_signupfragment_to_signinfragment);
                 }
             }
         });

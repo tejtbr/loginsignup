@@ -43,8 +43,6 @@ public class password extends AppCompatActivity {
                     passwordreset(emailtext);
                 }
             }
-
-
         });
 
         back.setOnClickListener(new View.OnClickListener() {

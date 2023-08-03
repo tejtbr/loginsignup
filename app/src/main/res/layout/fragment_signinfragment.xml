@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/image3"
+    android:background="@drawable/image5"
     tools:context=".views.signinfragment">
     <TextView
         android:layout_width="wrap_content"
