@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/signupfragment">
+
+    <fragment
+        android:id="@+id/signupfragment"
+        android:name="com.example.loginsignup.views.signupfragment"
+        android:label="fragment_signupfragment"
+        tools:layout="@layout/fragment_signupfragment" >
+        <action
+            android:id="@+id/action_signupfragment_to_signinfragment"
+            app:destination="@id/signinfragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signinfragment"
+        android:name="com.example.loginsignup.views.signinfragment"
+        android:label="fragment_signinfragment"
+        tools:layout="@layout/fragment_signinfragment" >
+        <action
+            android:id="@+id/action_signinfragment_to_signoutfragment"
+            app:destination="@id/signoutfragment" />
+        <action
+            android:id="@+id/action_signinfragment_to_signupfragment"
+            app:destination="@id/signupfragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signoutfragment"
+        android:name="com.example.loginsignup.views.signoutfragment"
+        android:label="fragment_signoutfragment"
+        tools:layout="@layout/fragment_signoutfragment" >
+        <action
+            android:id="@+id/action_signoutfragment_to_signinfragment"
+            app:destination="@id/signinfragment" />
+    </fragment>
+</navigation>
