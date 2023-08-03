@@ -1,5 +1,6 @@
 package com.example.loginsignup.views;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -18,6 +19,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.loginsignup.R;
+import com.example.loginsignup.password;
 import com.example.loginsignup.viewmodel.authviewmodel;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -28,6 +30,9 @@ public class signinfragment extends Fragment {
     private Button signinbtn;
     private authviewmodel viewmodel;
     private NavController navController;
+
+    private TextView password;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,6 +63,7 @@ public class signinfragment extends Fragment {
         passedit=view.findViewById(R.id.passEditSignIn);
         signup=view.findViewById(R.id.signUpText);
         signinbtn=view.findViewById(R.id.signInBtn);
+        password=view.findViewById(R.id.password);
         //intializing for navigation
         navController= Navigation.findNavController(view);
 
@@ -77,6 +83,14 @@ public class signinfragment extends Fragment {
                 if(!email.isEmpty()&&!pass.isEmpty()){
                     viewmodel.login(email,pass);
                 }
+            }
+        });
+
+        password.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getActivity(), com.example.loginsignup.password.class);
+                startActivity(intent);
             }
         });
 
